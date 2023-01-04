@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+
+    <link rel="stylesheet" href="./src/css/pico.min.css">
+
+    <style>
+        .hiddenClass {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="container-fluid">
+      <ul>
+        <li>
+            <a href="index.html" class="contrast" onclick="routeLink(event)"><strong>Todo</strong></a>
+        </li>
+        <li>
+            <a href="index.html?page=categories" class="contrast" onclick="routeLink(event)"><strong>Category</strong></a>
+        </li>
+      </ul>
+    </nav>
+    <main id="app" class="container" style="padding: 0 !important;">
+        <div id="todosCol" class="hiddenClass">
+            <h3 style="color: blueviolet;">Todo</h3>
+            <form id="todoForm" action="#">
+                <div class="grid">
+                    <input type="text" id="todo" placeholder="Add Todo">
+                    <select id="todo_category_options"></select>
+                    <button id="addTodo" class="contrast">Add</button>
+                </div>
+            </form>
+            
+            <div class="grid">
+                <label for="todo_search_filter">
+                    Search Todo
+                    <input type="text" id="todo_search_filter" placeholder="Todo...">
+                </label>
+                <label for="todo_category_options_filter">
+                    Filter By Category
+                    <select id="todo_category_options_filter"></select>
+                </label>
+                <label for="todo_date_filter">
+                    Filter By Date
+                    <input type="date" id="todo_date_filter">
+                </label>
+            </div>
+    
+            <table id="todoList" role="grid"></table>
+        </div>
+
+        <div id="categoryCol" class="hiddenClass">
+            <h3 style="color: blueviolet;">Category</h3>
+            <form id="categoryForm" action="#">
+                <div class="grid">
+                    <input type="text" id="category" placeholder="Add Category">
+                    <button id="addTodo" class="contrast">Add</button>
+                </div>
+            </form>
+    
+            <select id="category_sort">
+                <option value="added">Sort By Added</option>
+                <option value="category_asc">Category Asc</option>
+                <option value="category_desc">Category Desc</option>
+            </select>
+    
+            <table id="categoryList" role="grid"></table>
+        </div>
+    </main>
+
+    <script src="./src/js/category.js"></script>
+    <script src="./src/js/todoList.js"></script>
+    <script src="./src/js/script.js"></script>
+    <noscript>
+        <h3>Javascript should be enabled to run the app.</h3>
+    </noscript>
+</body>
+</html>
